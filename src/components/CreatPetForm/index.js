@@ -17,11 +17,11 @@ const CreatePetForm = () => {
   }, [])
 
   useEffect(() => {
-    fetch('http://localhost:8080/adoptme/api/categorias/')
+    fetch('http://localhost:8081/adoptme/api/categorias/')
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch('http://localhost:8080/adoptme/api/razas')
+    fetch('http://localhost:8081/adoptme/api/razas')
       .then(response => response.json())
       .then(data => setRazas(data))
   }, [])
@@ -42,7 +42,7 @@ const CreatePetForm = () => {
     data.foto = image
     console.log(data)
     setLoading(true)
-    fetch('http://localhost:8080/adoptme/api/mascotas', {
+    fetch('http://localhost:8081/adoptme/api/mascotas', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

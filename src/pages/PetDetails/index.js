@@ -16,7 +16,7 @@ const PetDetails = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`http://localhost:8080/adoptme/api/mascotas/${id}`)
+    fetch(`http://localhost:8081/adoptme/api/mascotas/${id}`)
       .then(response => response.json())
       .then(data => {
         setPet(data)

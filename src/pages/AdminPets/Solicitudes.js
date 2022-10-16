@@ -7,7 +7,7 @@ const Solicitudes = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:8080/adoptme/api/solicitudes')
+    fetch('http://localhost:8081/adoptme/api/solicitudes')
       .then(response => response.json())
       .then(data => {
         console.log(data)

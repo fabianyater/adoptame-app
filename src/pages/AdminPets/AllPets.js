@@ -8,7 +8,7 @@ const AllPets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:8080/adoptme/api/mascotas')
+    fetch('http://localhost:8081/adoptme/api/mascotas')
       .then(response => response.json())
       .then(data => {
         setPets(data)
