@@ -1,0 +1,125 @@
+/* Mobile first */
+
+.subnav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subnav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 20px;
+  padding: 0;
+}
+
+.subnav ul li{
+  list-style: none;
+
+}
+
+.subnav ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.subnav ul li a:hover{
+  color: #F55C0D;
+}
+
+.active{
+  color: #F55C0D !important;
+  border-bottom: 2px solid #F55C0D;
+  padding: 10px 20px;
+}
+
+.hide-input{
+  display: none;
+}
+
+.file-group{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 20%;
+  margin-bottom: 20px;
+}
+
+.file-group > img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.file-group .input-group{
+  width: 100%;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.buttons button{
+  width: 40%;
+}
+
+.delete{
+  background-color: rgb(223, 30, 30);
+}
+
+.edit{
+  background-color: rgb(17, 151, 17);
+}
+
+/* Media query */
+
+@media screen and (min-width: 768px) {
+
+  .subnav {
+    width: 70%;
+    justify-content: space-around;
+  }
+
+  .subnav ul {
+    align-self: start;
+    gap: 40px;
+  }
+
+  .active{
+    color: #F55C0D !important;
+    border: 2px solid #F55C0D;
+    padding: 10px 20px;
+  }
+
+  .subnav ul li a{
+    font-size: 1.4rem;
+  }
+
+  .file-group{
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .file-group > img{
+    width: 200px;
+    height: 200px;
+  }
+
+  .file-group .input-group{
+    width: 50%;
+  }
+}

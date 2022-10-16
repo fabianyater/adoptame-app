@@ -1,0 +1,96 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+.landing-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 1rem;
+}
+
+.landing-left h2{
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.landing-left p{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #000;
+  margin: 1rem 0;
+}
+
+.whatsapp{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+  color: #fff;
+  background-color: #0e972e;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.landing-image{
+  display: none;
+}
+
+.social-media{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.social-media a{
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 30px;
+}
+
+.social-media a img{
+  width: 50px;
+  height: 50px;
+}
+
+
+@media (min-width: 768px) {
+  .landing{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .landing-left{
+    width: 50%;
+  }
+
+  .landing-left h2{
+    font-size: 3rem;
+  }
+
+  .landing-left p{
+    font-size: 1.5rem;
+  }
+
+  .landing-image{
+    display: block;
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .social-media{
+  }
+}
