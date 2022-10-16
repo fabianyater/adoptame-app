@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
 import { patternEmail } from '../../helpers/Helper'
-import { Spinner } from '../Spinner';
 
 import './styles.css'
 
@@ -10,7 +9,6 @@ const Form = (pet) => {
   const { handleSubmit, register, reset, formState: { errors } } = useForm();
 
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
 
   const solicitud = {
     estado: 'Pendiente',
@@ -19,14 +17,7 @@ const Form = (pet) => {
     }
   }
 
-  const email = {
-    sender: '',
-    msgBody: '',
-    subject: 'Solicitud de adopción'
-  }
-
   const onSubmit = (data) => {
-    setLoading(true)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

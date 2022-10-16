@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import PetCard from '../../components/PetCard'
 import { Spinner } from '../../components/Spinner'
 
 const Solicitudes = () => {

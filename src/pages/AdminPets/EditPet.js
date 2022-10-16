@@ -5,7 +5,7 @@ import { Spinner } from '../../components/Spinner';
 
 const EditPet = () => {
   const { id } = useParams();
-  const { handleSubmit, register, formState: { errors }, setValue, getValues } = useForm();
+  const { handleSubmit, register, formState: { errors }, setValue } = useForm();
   const inputRef = useRef(null);
 
   const [categorias, setCategorias] = useState([])
@@ -32,6 +32,7 @@ const EditPet = () => {
       });
     } */
     //TODO: setear los valores del formulario con los valores del pet
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pet])
 
   useEffect(() => {

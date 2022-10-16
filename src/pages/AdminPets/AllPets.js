@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PetCard from '../../components/PetCard'
 import { Spinner } from '../../components/Spinner'
-import Pets from '../Pets'
 
 const AllPets = () => {
   const [pets, setPets] = useState([])
