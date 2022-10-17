@@ -12,7 +12,7 @@ const Pets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:8081/adoptme/api/mascotas')
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas')
       .then(response => response.json())
       .then(data => {
         setPets(data)

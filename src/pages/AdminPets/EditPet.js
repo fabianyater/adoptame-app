@@ -36,22 +36,22 @@ const EditPet = () => {
   }, [pet])
 
   useEffect(() => {
-    fetch('http://localhost:8081/adoptme/api/categorias/')
+    fetch('http://localhost:8080/adoptme/api/categorias/')
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch('http://localhost:8081/adoptme/api/razas')
+    fetch('http://localhost:8080/adoptme/api/razas')
       .then(response => response.json())
       .then(data => setRazas(data))
 
-    fetch(`http://localhost:8081/adoptme/api/mascotas/${id}`)
+    fetch(`http://localhost:8080/adoptme/api/mascotas/${id}`)
       .then(response => response.json())
       .then(data => setPet(data))
   }, [id])
 
   const onSubmit = async (data) => {
     setLoading(true)
-    fetch('http://localhost:8081/adoptme/api/mascotas', {
+    fetch('http://localhost:8080/adoptme/api/mascotas', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -77,7 +77,7 @@ const EditPet = () => {
 
   const deletePet = () => {
     console.log("delete")
-    fetch(`http://localhost:8081/adoptme/api/mascotas/${id}`, {
+    fetch(`http://localhost:8080/adoptme/api/mascotas/${id}`, {
       method: 'DELETE',
     })
       .then(response => response.json())
