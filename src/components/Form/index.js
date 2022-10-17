@@ -24,7 +24,7 @@ const Form = (pet) => {
       body: JSON.stringify(data)
     };
 
-    fetch('http://localhost:8080/adoptme/api/usuarios/', requestOptions)
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/usuarios/', requestOptions)
       .then(response => response.json())
 
     setTimeout(() => {
@@ -34,7 +34,7 @@ const Form = (pet) => {
         body: JSON.stringify(solicitud)
       };
 
-      fetch(`http://localhost:8080/adoptme/api/solicitudes/${data.telefono}`, requestOptionsS)
+      fetch(`https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/solicitudes/${data.telefono}`, requestOptionsS)
         .then(response => response.json())
     }, 3000);
 
@@ -47,7 +47,7 @@ const Form = (pet) => {
         subject: 'Solicitud de adopción'
       })
     };
-    fetch('http://localhost:8080/adoptme/api/correos/', requestOptionsw)
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/correos/', requestOptionsw)
       .then(response => response.json())
       .then(data => console.log(data))
 

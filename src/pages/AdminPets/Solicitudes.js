@@ -7,7 +7,7 @@ const Solicitudes = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:8080/adoptme/api/solicitudes')
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/solicitudes')
       .then(response => response.json())
       .then(data => {
         console.log(data)
