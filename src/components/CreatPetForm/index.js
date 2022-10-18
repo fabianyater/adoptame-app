@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Spinner } from '../Spinner/index'
 
 import './styles.css'
@@ -11,6 +12,7 @@ const CreatePetForm = () => {
   const [razas, setRazas] = useState([])
   const [image, setImage] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [isCreated, setIsCreated] = useState(false)
 
   useEffect(() => {
     document.title = 'Crear Mascota'
@@ -53,12 +55,18 @@ const CreatePetForm = () => {
       .then(data => {
         console.log(data)
         setLoading(false)
-        reset()
+        if (data === 200) {
+          setIsCreated(true)
+          reset()
+        } else {
+          setIsCreated(false)
+        }
       })
   }
 
   return (
     <>
+      {isCreated && <div> {toast.success('Mascota creada con éxito')} </div>}
       <form onSubmit={handleSubmit(onSubmit)} className='formCreatePet'>
         <div className='groups'>
           <div className='input-group'>
