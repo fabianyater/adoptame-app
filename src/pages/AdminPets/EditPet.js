@@ -43,6 +43,7 @@ const EditPet = () => {
   useEffect(() => {
     fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/categorias/', {
       method: 'GET',
+      mode: 'no-cors',
       headers
     })
       .then(response => response.json())
@@ -50,6 +51,7 @@ const EditPet = () => {
 
     fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/razas', {
       method: 'GET',
+      mode: 'no-cors',
       headers
     })
       .then(response => response.json())
@@ -57,6 +59,7 @@ const EditPet = () => {
 
     fetch(`https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/${id}`, {
       method: 'GET',
+      mode: 'no-cors',
       headers
     })
       .then(response => response.json())
@@ -68,6 +71,7 @@ const EditPet = () => {
     setLoading(true)
     fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/', {
       method: 'PUT',
+      mode: 'no-cors',
       headers,
       body: JSON.stringify({ ...data, id, foto: pet.foto })
     })

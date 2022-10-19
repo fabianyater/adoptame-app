@@ -24,6 +24,7 @@ const CreatePetForm = () => {
 
   useEffect(() => {
     fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/categorias/', {
+      mode: 'no-cors',
       method: 'GET',
       headers
     })
@@ -31,6 +32,7 @@ const CreatePetForm = () => {
       .then(data => setCategorias(data))
 
     fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/razas',{
+      mode: 'no-cors',
       method: 'GET',
       headers
     })
@@ -57,6 +59,7 @@ const CreatePetForm = () => {
     setLoading(true)
     fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/', {
       method: 'POST',
+      mode: 'no-cors',
       headers,
       body: JSON.stringify(data)
     })

@@ -20,6 +20,7 @@ const Form = (pet) => {
   const onSubmit = (data) => {
     const requestOptions = {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     };
@@ -30,6 +31,7 @@ const Form = (pet) => {
     setTimeout(() => {
       const requestOptionsS = {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(solicitud)
       };
@@ -40,6 +42,7 @@ const Form = (pet) => {
 
     const requestOptionsw = {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         sender: data.correo,

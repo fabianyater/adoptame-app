@@ -10,6 +10,7 @@ const Register = () => {
     console.log(data)
     const requestOptions = {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     };
