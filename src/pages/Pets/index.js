@@ -12,7 +12,7 @@ const Pets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/all', 
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/all/', 
     {
       method: 'GET',
       mode: 'no-cors',
