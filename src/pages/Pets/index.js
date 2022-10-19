@@ -17,6 +17,7 @@ const Pets = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        'access-control-allow-origin': '*'
       }
     })
       .then(response => response.json())
