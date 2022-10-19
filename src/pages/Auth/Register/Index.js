@@ -4,7 +4,7 @@ import { patternEmail } from '../../../helpers/Helper'
 
 
 const Register = () => {
-  const { handleSubmit, register, reset, formState: { errors } } = useForm();
+  const { handleSubmit, register, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
     console.log(data)

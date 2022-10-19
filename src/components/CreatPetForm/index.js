@@ -36,6 +36,7 @@ const CreatePetForm = () => {
     })
       .then(response => response.json())
       .then(data => setRazas(data))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleImageChange = (e) => {
