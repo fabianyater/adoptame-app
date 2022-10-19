@@ -17,7 +17,7 @@ const Login = () => {
       body: JSON.stringify(data)
     };
 
-    fetch('http://localhost:8080/adoptme/api/usuarios/login', requestOptions)
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/usuarios/login', requestOptions)
       .then(response => response.json())
       .then(data => {
         if (data.data.jwt) {
