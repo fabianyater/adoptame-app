@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const PetCard = ({ pets, route, showButtons, link, edit, deletebutton }) => {
   return (
     <div className='pet-cards'>
-      {pets.map(pet => (
+      {pets?.map(pet => (
         <div key={pet.id} className="card">
           <img src={`data:image/jpeg;base64,${pet.foto}`} alt={pet.nombre} className='pet-image' />
           <div className='pet-info'>
