@@ -17,7 +17,7 @@ const Pets = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'access-control-allow-origin': '*'
+        'access-control-allow-origin': 'https://oyster-app-mr6h4.ondigitalocean.app'
       }
     })
       .then(response => response.json())
