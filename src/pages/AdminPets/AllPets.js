@@ -8,7 +8,13 @@ const AllPets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas')
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/all', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${localStorage.getItem('token')}`
+      }
+    })
       .then(response => response.json())
       .then(data => {
         setPets(data)

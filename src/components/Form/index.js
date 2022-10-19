@@ -24,7 +24,7 @@ const Form = (pet) => {
       body: JSON.stringify(data)
     };
 
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/usuarios/', requestOptions)
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/usuarios/solicitud', requestOptions)
       .then(response => response.json())
 
     setTimeout(() => {

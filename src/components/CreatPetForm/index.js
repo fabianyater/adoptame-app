@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { Spinner } from '../Spinner/index'
 
 import './styles.css'
@@ -12,18 +12,28 @@ const CreatePetForm = () => {
   const [razas, setRazas] = useState([])
   const [image, setImage] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [isCreated, setIsCreated] = useState(false)
 
   useEffect(() => {
     document.title = 'Crear Mascota'
   }, [])
 
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `${localStorage.getItem('token')}`
+  }
+
   useEffect(() => {
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/categorias/')
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/categorias/', {
+      method: 'GET',
+      headers
+    })
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/razas')
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/razas',{
+      method: 'GET',
+      headers
+    })
       .then(response => response.json())
       .then(data => setRazas(data))
   }, [])
@@ -44,29 +54,27 @@ const CreatePetForm = () => {
     data.foto = image
     console.log(data)
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas', {
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers,
       body: JSON.stringify(data)
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
-        setLoading(false)
-        if (data === 200) {
-          setIsCreated(true)
-          reset()
-        } else {
-          setIsCreated(false)
+        if (data.message === "201") {
+          toast.success('Mascota creada con éxito')
         }
+        else {
+          toast.error('Error al crear mascota. Intenta nuevamente')
+        }
+        setLoading(false)
+        reset()
       })
   }
 
   return (
     <>
-      {isCreated && <div> {toast.success('Mascota creada con éxito')} </div>}
+    <div><Toaster position='top-center' /></div>
       <form onSubmit={handleSubmit(onSubmit)} className='formCreatePet'>
         <div className='groups'>
           <div className='input-group'>

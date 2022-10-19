@@ -32,30 +32,42 @@ const EditPet = () => {
       });
     } */
     //TODO: setear los valores del formulario con los valores del pet
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pet])
 
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `${localStorage.getItem('token')}`
+  }
+
   useEffect(() => {
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/categorias/')
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/categorias/', {
+      method: 'GET',
+      headers
+    })
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/razas')
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/razas', {
+      method: 'GET',
+      headers
+    })
       .then(response => response.json())
       .then(data => setRazas(data))
 
-    fetch(`https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/${id}`)
+    fetch(`https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/${id}`, {
+      method: 'GET',
+      headers
+    })
       .then(response => response.json())
       .then(data => setPet(data))
   }, [id])
 
   const onSubmit = async (data) => {
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas', {
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/', {
       method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers,
       body: JSON.stringify({ ...data, id, foto: pet.foto })
     })
       .then(response => response.json())
@@ -150,7 +162,7 @@ const EditPet = () => {
         </div>
 
         <div className='buttons'>
-        <button className='button delete' onClick={() => deletePet} disabled={loading}>{loading ?
+          <button className='button delete' onClick={() => deletePet} disabled={loading}>{loading ?
             <Spinner color="white" size={25} speed={1} lineWeight={5} />
             :
             'Eliminar'}

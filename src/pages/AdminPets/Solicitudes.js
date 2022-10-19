@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Spinner } from '../../components/Spinner'
 
+import './requestStyles.css'
+
 const Solicitudes = () => {
   const [solicitudes, setSolicitudes] = useState([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/solicitudes')
+    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/solicitudes',{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${localStorage.getItem('token')}`
+      }
+    })
       .then(response => response.json())
       .then(data => {
         console.log(data)
@@ -36,8 +44,8 @@ const Solicitudes = () => {
                 <p>{solicitud.usuario?.telefono}</p>
                 <p>{solicitud.usuario?.direccion}</p>
                 <p>{solicitud.fechaSolicitud}</p>
-                <p>{solicitud.mascota?.nombre}</p>
-                <p>{solicitud.mascota?.edad}</p>
+                <p>Nombre mascota: {solicitud.mascota?.nombre}</p>
+                <p>Edad mascota: {solicitud.mascota?.edad}</p>
                 <img src={`data:image/jpeg;base64,${solicitud.mascota?.foto}`} alt={solicitud.mascota?.nombre} className='pet-image' />
                 <p>{solicitud.estado}</p>
               </div>
