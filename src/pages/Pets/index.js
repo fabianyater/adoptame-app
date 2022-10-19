@@ -15,9 +15,9 @@ const Pets = () => {
     fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/all', 
     {
       method: 'GET',
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
-        'access-control-allow-origin': 'https://oyster-app-mr6h4.ondigitalocean.app'
       }
     })
       .then(response => response.json())
