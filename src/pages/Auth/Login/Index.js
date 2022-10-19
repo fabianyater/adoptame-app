@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useUserContext } from '../../../context/userContext';
 import { patternEmail } from '../../../helpers/Helper';
 
 const Login = () => {
 
-  const { contextUser, setContextUser } = useUserContext();
+  const { setContextUser } = useUserContext();
 
   const { handleSubmit, register, formState: { errors } } = useForm();
 
