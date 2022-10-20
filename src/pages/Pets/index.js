@@ -18,6 +18,10 @@ const Pets = () => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
+          'Allow-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Authorization, X-Request-With',
         }
       })
       .then(response => response.json())
