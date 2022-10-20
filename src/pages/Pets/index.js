@@ -3,6 +3,7 @@ import PetCard from '../../components/PetCard'
 import { Spinner } from '../../components/Spinner'
 
 import whatsappLogo from '../../images/whatsapp-icon.png'
+import { apiUrl, localApiUrl} from '../../utils/env'
 
 import './styles.css'
 
@@ -12,14 +13,13 @@ const Pets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas', 
-    {
-      method: 'GET',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
+    fetch(`${apiUrl}/mascotas/all`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
       .then(response => response.json())
       .then(data => {
         setPets(data)

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
+import { apiUrl, localApiUrl} from '../../utils/env';
 import { Spinner } from '../Spinner/index'
 
 import './styles.css'
@@ -23,16 +24,14 @@ const CreatePetForm = () => {
   }
 
   useEffect(() => {
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/categorias/', {
-      mode: 'no-cors',
+    fetch(`${apiUrl}/categorias/`, {
       method: 'GET',
       headers
     })
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/razas',{
-      mode: 'no-cors',
+    fetch(`${apiUrl}/razas/`,{
       method: 'GET',
       headers
     })
@@ -57,9 +56,8 @@ const CreatePetForm = () => {
     data.foto = image
     console.log(data)
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/', {
+    fetch(`${apiUrl}/mascotas/agregar`, {
       method: 'POST',
-      mode: 'no-cors',
       headers,
       body: JSON.stringify(data)
     })

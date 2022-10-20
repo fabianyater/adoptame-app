@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PetCard from '../../components/PetCard'
 import { Spinner } from '../../components/Spinner'
+import { apiUrl, localApiUrl} from '../../utils/env'
 
 const AllPets = () => {
   const [pets, setPets] = useState([])
@@ -8,12 +9,10 @@ const AllPets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas', {
+    fetch(`${apiUrl}/mascotas/all`, {
       method: 'GET',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `${localStorage.getItem('token')}`
       }
     })
       .then(response => response.json())

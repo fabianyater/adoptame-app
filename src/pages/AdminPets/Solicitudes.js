@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Spinner } from '../../components/Spinner'
+import { apiUrl, localApiUrl} from '../../utils/env'
 
 import './requestStyles.css'
 
@@ -9,9 +10,8 @@ const Solicitudes = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/solicitudes',{
+    fetch(`${apiUrl}/solicitudes/`, {
       method: 'GET',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${localStorage.getItem('token')}`

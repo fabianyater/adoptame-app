@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useUserContext } from '../../../context/userContext';
 import { patternEmail } from '../../../helpers/Helper';
+import { apiUrl, localApiUrl} from '../../../utils/env';
 
 const Login = () => {
 
@@ -10,15 +11,13 @@ const Login = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
     const requestOptions = {
       method: 'POST',
-      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     };
 
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/usuarios/login', requestOptions)
+    fetch(`${apiUrl}/usuarios/login`, requestOptions)
       .then(response => response.json())
       .then(data => {
         if (data.data.jwt) {
@@ -26,7 +25,7 @@ const Login = () => {
             correo: data.data.correo,
             token: data.data.jwt
           });
-          
+
           localStorage.setItem('token', data.data.jwt);
           localStorage.setItem('correo', data.data.correo);
           window.location.href = '/admin/mascotas/agregar';
@@ -34,7 +33,6 @@ const Login = () => {
       });
 
   }
-  
 
   if (localStorage.getItem('token')) {
     window.location.href = '/admin/mascotas/agregar';

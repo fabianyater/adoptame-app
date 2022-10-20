@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { patternEmail } from '../../../helpers/Helper'
+import { apiUrl, localApiUrl} from '../../../utils/env';
 
 
 const Register = () => {
@@ -10,12 +11,11 @@ const Register = () => {
     console.log(data)
     const requestOptions = {
       method: 'POST',
-      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     };
 
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/usuarios/register', requestOptions)
+    fetch(`${apiUrl}/usuarios/register`, requestOptions)
       .then(response => response.json())
   }
 

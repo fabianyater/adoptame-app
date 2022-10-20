@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner';
+import { apiUrl, localApiUrl} from '../../utils/env';
 
 const EditPet = () => {
   const { id } = useParams();
@@ -25,13 +26,6 @@ const EditPet = () => {
     setValue('categoriaId.id', pet.categoria?.id)
     setValue('razaId.id', pet.raza?.id)
     setValue('descripcion', pet.descripcion)
-    /* if (pet.id) {
-      Object.keys(pet)?.forEach((element, index) => {
-        console.log("hgjdsgjkdfgd", typeof Object.values(pet)[index] === 'object' ? Object.values((Object.keys(pet)[index]+'Id').id) : Object.values(pet), element)
-        //setValue(typeof Object.values(pet)[index] === 'object' ? Object.values((Object.keys(pet)[index]+'Id').id) : Object.values(pet), element)
-      });
-    } */
-    //TODO: setear los valores del formulario con los valores del pet
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pet])
 
@@ -41,37 +35,33 @@ const EditPet = () => {
   }
 
   useEffect(() => {
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/categorias/', {
+    fetch(`${apiUrl}/categorias/`, {
       method: 'GET',
-      mode: 'no-cors',
       headers
     })
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/razas', {
+    fetch(`${apiUrl}/razas/`, {
       method: 'GET',
-      mode: 'no-cors',
       headers
     })
       .then(response => response.json())
       .then(data => setRazas(data))
 
-    fetch(`https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/${id}`, {
+    fetch(`${apiUrl}/mascotas/${id}`, {
       method: 'GET',
-      mode: 'no-cors',
       headers
     })
       .then(response => response.json())
       .then(data => setPet(data))
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
   const onSubmit = async (data) => {
     setLoading(true)
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/', {
+    fetch(`${apiUrl}/mascotas/actualizar`, {
       method: 'PUT',
-      mode: 'no-cors',
       headers,
       body: JSON.stringify({ ...data, id, foto: pet.foto })
     })
@@ -94,7 +84,7 @@ const EditPet = () => {
 
   const deletePet = () => {
     console.log("delete")
-    fetch(`https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/mascotas/${id}`, {
+    fetch(`${apiUrl}/mascotas/${id}`, {
       method: 'DELETE',
     })
       .then(response => response.json())
@@ -167,11 +157,11 @@ const EditPet = () => {
         </div>
 
         <div className='buttons'>
-          <button className='button delete' onClick={() => deletePet} disabled={loading}>{loading ?
+          {/* <button className='button delete' onClick={() => deletePet} disabled={loading}>{loading ?
             <Spinner color="white" size={25} speed={1} lineWeight={5} />
             :
             'Eliminar'}
-          </button>
+          </button> */}
           <button type='submit' className='button edit' disabled={loading}>{loading ?
             <Spinner color="white" size={25} speed={1} lineWeight={5} />
             :

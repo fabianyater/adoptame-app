@@ -17,7 +17,7 @@ const AdminPets = () => {
 
   useEffect(() => {
     document.title = 'Administrar Mascotas'
-    
+
   }, [])
 
   if (!localStorage.getItem('token')) {

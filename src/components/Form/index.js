@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
 import { patternEmail } from '../../helpers/Helper'
+import { apiUrl, localApiUrl} from '../../utils/env';
 
 import './styles.css'
 
@@ -20,29 +21,26 @@ const Form = (pet) => {
   const onSubmit = (data) => {
     const requestOptions = {
       method: 'POST',
-      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     };
 
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/usuarios/solicitud', requestOptions)
+    fetch(`${apiUrl}/usuarios/solicitud`, requestOptions)
       .then(response => response.json())
 
     setTimeout(() => {
       const requestOptionsS = {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(solicitud)
       };
 
-      fetch(`https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/solicitudes/${data.telefono}`, requestOptionsS)
+      fetch(`${apiUrl}/solicitudes/${data.telefono}`, requestOptionsS)
         .then(response => response.json())
     }, 3000);
 
     const requestOptionsw = {
       method: 'POST',
-      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         sender: data.correo,
@@ -50,7 +48,7 @@ const Form = (pet) => {
         subject: 'Solicitud de adopción'
       })
     };
-    fetch('https://oyster-app-mr6h4.ondigitalocean.app/adoptme/api/correos/', requestOptionsw)
+    fetch(`${apiUrl}/correos/`, requestOptionsw)
       .then(response => response.json())
       .then(data => console.log(data))
 
@@ -74,7 +72,7 @@ const Form = (pet) => {
           </div>
           <div className='input-group'>
             <label htmlFor='correo'>Correo </label>
-            <input type='email' id='correo'{...register("correo", { required: true, pattern: { patternEmail, message:'Correo inválido' } })} />
+            <input type='email' id='correo'{...register("correo", { required: true, pattern: { patternEmail, message: 'Correo inválido' } })} />
             {errors.correo && <span className='error' >Este campo es requerido</span>}
           </div>
           <div className='input-group'>
@@ -97,13 +95,13 @@ const Form = (pet) => {
         <input type='submit' value='Enviar solicitud' className='button' />
       </form>
     </>
-  /* ) :
-    (
-      <div className='card-solicitud'>
-        <h2>Gracias por tu solicitud</h2>
-        <p>En breve nos pondremos en contacto contigo</p>
-      </div>
-    ) */
+    /* ) :
+      (
+        <div className='card-solicitud'>
+          <h2>Gracias por tu solicitud</h2>
+          <p>En breve nos pondremos en contacto contigo</p>
+        </div>
+      ) */
   )
 }
 
