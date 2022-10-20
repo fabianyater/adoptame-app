@@ -13,7 +13,7 @@ const Pets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${apiUrl}/mascotas`,
+    fetch(`${apiUrl}/mascotas/all`,
       {
         method: 'GET',
         headers: {
