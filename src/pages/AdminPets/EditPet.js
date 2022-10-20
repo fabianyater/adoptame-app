@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner';
-import { apiUrl, localApiUrl} from '../../utils/env';
+import { apiUrl} from '../../utils/env';
 
 const EditPet = () => {
   const { id } = useParams();

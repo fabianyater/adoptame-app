@@ -6,7 +6,7 @@ import ErrorPage from '../ErrorPage';
 import { Spinner } from '../../components/Spinner';
 
 import './styles.css'
-import { apiUrl, localApiUrl} from '../../utils/env';
+import { apiUrl} from '../../utils/env';
 
 const PetDetails = () => {
   const { id } = useParams();

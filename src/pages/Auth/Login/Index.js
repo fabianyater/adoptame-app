@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useUserContext } from '../../../context/userContext';
 import { patternEmail } from '../../../helpers/Helper';
-import { apiUrl, localApiUrl} from '../../../utils/env';
+import { apiUrl} from '../../../utils/env';
 
 const Login = () => {
 

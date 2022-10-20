@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PetCard from '../../components/PetCard'
 import { Spinner } from '../../components/Spinner'
-import { apiUrl, localApiUrl} from '../../utils/env'
+import { apiUrl} from '../../utils/env'
 
 const AllPets = () => {
   const [pets, setPets] = useState([])

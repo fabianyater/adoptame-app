@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Spinner } from '../../components/Spinner'
-import { apiUrl, localApiUrl} from '../../utils/env'
+import { apiUrl} from '../../utils/env'
 
 import './requestStyles.css'
 

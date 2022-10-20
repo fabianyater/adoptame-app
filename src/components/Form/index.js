@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
 import { patternEmail } from '../../helpers/Helper'
-import { apiUrl, localApiUrl} from '../../utils/env';
+import { apiUrl} from '../../utils/env';
 
 import './styles.css'
 

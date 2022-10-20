@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
-import { apiUrl, localApiUrl} from '../../utils/env';
+import { apiUrl} from '../../utils/env';
 import { Spinner } from '../Spinner/index'
 
 import './styles.css'
