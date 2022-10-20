@@ -82,16 +82,6 @@ const EditPet = () => {
     inputRef.current.click();
   };
 
-  const deletePet = () => {
-    console.log("delete")
-    fetch(`${apiUrl}/mascotas/${id}`, {
-      method: 'DELETE',
-    })
-      .then(response => response.json())
-      .finally(() => setLoading(false))
-  }
-
-
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className='formCreatePet'>
