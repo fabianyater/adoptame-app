@@ -79,39 +79,39 @@ const CreatePetForm = () => {
     <div><Toaster position='top-center' /></div>
       <form onSubmit={handleSubmit(onSubmit)} className='formCreatePet'>
         <div className='groups'>
-          <div className='input-groups'>
+          <div className='input-group'>
             <label htmlFor='nombre'>Nombre </label>
             <input type='text' id='nombre'{...register("nombre", { required: true })} />
             {errors.nombre && <span className='error' >Este campo es requerido</span>}
           </div>
-          <div className='input-groups'>
+          <div className='input-group'>
             <label htmlFor='edad'>Edad </label>
             <input type='number' min='0' id='edad'{...register("edad", { required: true })} />
             {errors.edad && <span className='error' >Este campo es requerido</span>}
           </div>
-          <div className='input-groups'>
+          <div className='input-group'>
             <label htmlFor='peso'>Peso (kg) </label>
             <input type='number' min='0' id='peso'{...register("peso", { required: true })} />
             {errors.peso && <span className='error' >Este campo es requerido</span>}
           </div>
-          <div className='input-groups'>
+          <div className='input-group'>
             <label htmlFor='sexo'>Sexo</label>
             <input type='text' id='sexo'{...register("sexo", { required: true })} />
             {errors.sexo && <span className='error' >Este campo es requerido</span>}
           </div>
         </div>
-        <div className='input-groups' id='other'>
+        <div className='input-group' id='other'>
           <label htmlFor='descripcion'>Descripción</label>
           <input type='text' id='descripcion'{...register("descripcion", { required: true })} />
           {errors.descripcion && <span className='error' >Este campo es requerido</span>}
         </div>
-        <div className='input-groups' id='other'>
+        <div className='input-group' id='other'>
           <label htmlFor='foto'>Foto</label>
           <input type='file' id='foto'{...register("foto", { required: true, onChange: handleImageChange })} />
           {errors.foto && <span className='error' >Este campo es requerido</span>}
         </div>
         <div className='groups'>
-          <div className='select-groups'>
+          <div className='select-group'>
             <label htmlFor='categoria'>Categoría</label>
             <select id='categoria' {...register('categoriaId.id', { required: true })}>
               <option value=''>Seleccionar</option>
@@ -121,7 +121,7 @@ const CreatePetForm = () => {
             </select>
             {errors.categoriaId && <span className='error' >Este campo es requerido</span>}
           </div>
-          <div className='select-groups'>
+          <div className='select-group'>
             <label htmlFor='raza'>Raza</label>
             <select id='raza' {...register('razaId.id', { required: true })}>
               <option value=''>Seleccionar</option>

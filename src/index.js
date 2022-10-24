@@ -9,6 +9,7 @@ import PetDetails from './pages/PetDetails';
 import AdminPets from './pages/AdminPets';
 
 import './index.css';
+import NewPet from './pages/AdminPets/NewPet';
 import AllPets from './pages/AdminPets/AllPets';
 import Solicitudes from './pages/AdminPets/Solicitudes';
 import EditPet from './pages/AdminPets/EditPet';
@@ -33,7 +34,7 @@ root.render(
           <Route path="/login" element={<Login />} />
           <Route path='/admin/mascotas' element={<AdminPets />} >
             <Route path='todas' element={<AllPets />} />
-            <Route path='actualizar' element={<AllPets />} />
+            <Route path='agregar' element={<NewPet />} />
             <Route path='actualizar/:id' element={<EditPet />} />
             <Route path='solicitudes' element={<Solicitudes />} />
             <Route path='agregar-usuario' element={<Register />} />
