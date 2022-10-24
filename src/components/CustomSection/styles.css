@@ -1,0 +1,45 @@
+.section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.section__image{
+  border-radius: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.section h2{
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section p{
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+
+  .section{
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 0;
+  }
+
+  .section__image{
+    max-width: 100%;
+    object-fit: cover;
+    width: 50%;
+  }
+}

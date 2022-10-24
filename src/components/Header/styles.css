@@ -1,7 +1,4 @@
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -28,6 +25,11 @@
   justify-content: flex-start;
   width: 100%;
   max-width: 1200px;
+}
+
+.left-nav .logo img{
+  width: 40px;
+  height: 40px;
 }
 
 .left-nav h1{
@@ -62,7 +64,7 @@
 
 @media (min-width: 768px) {
   .header{
-    padding: 10px 50px;
+    padding: 10px 70px;
   }
 
   .left-nav h1{
@@ -71,11 +73,9 @@
 
   .right-nav{
     width: 100%;
+    display: flex;
     justify-content: flex-end;
-  }
-
-  .right-nav a{
-    margin-left: 30px;
+    align-items: center;
   }
 
   .right-nav a:hover{
@@ -90,13 +90,8 @@
   }
 
   .right-nav a:last-child:hover{
-    background-color: #F55C0D;
+    background-color: #f56f2d;
     color: #fff;
-  }
-
-  .right-nav{
-    display: flex;
-    align-items: center;
   }
   
   .right-nav a{

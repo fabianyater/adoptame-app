@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PetCard from '../../components/PetCard'
 import { Spinner } from '../../components/Spinner'
-import { apiUrl} from '../../utils/env'
+import { localApiUrl} from '../../utils/env'
 
 const AllPets = () => {
   const [pets, setPets] = useState([])
@@ -9,7 +9,7 @@ const AllPets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${apiUrl}/mascotas/todas`, {
+    fetch(`${localApiUrl}/mascotas/todas`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

@@ -1,0 +1,31 @@
+.login{
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.login h1{
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #000;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.login p{
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+}
+
+@media screen and (min-width: 1000px){
+  .login h1{
+    width: 50%;
+  }
+
+  .login p{
+    width: 50%;
+    margin-bottom: 50px;
+  }
+}

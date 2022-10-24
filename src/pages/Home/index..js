@@ -1,35 +1,60 @@
 import React from 'react'
+import CustomSection from '../../components/CustomSection'
 
-import landing from '../../images/landing.png'
+import landing from '../../images/pet.webp'
 import whatsappLogo from '../../images/whatsapp-icon.png'
-import facebook from '../../images/facebook.png'
-import instagram from '../../images/instagram.png'
+import facebookLogo from '../../images/facebook.png'
+import instagramLogo from '../../images/instagram.png'
+import correoLogo from '../../images/correo.png'
+import family from '../../images/family.webp'
+import pets from '../../images/pets.webp'
+import we from '../../images/we.webp'
 
 import './styles.css'
+import Contact from '../../components/Contact'
 
 const Home = () => {
 
   return (
     <>
-      <div className='landing'>
-        <div className='landing-left'>
-          <h2>Deja a una mascota ser parte de tu familia</h2>
-          <p>Contáctanos y encuentra tu mejor compañía</p>
-          <a className='whatsapp' href='https://api.whatsapp.com/send?phone=573144183873'> Escríbenos a nuestro WhatsApp
+      <div className='home' id='home'>
+        <img src={landing} alt='Imagen de presentación' className='home__image' />
+        <div className='home__text'>
+          <h2>Bienvenido a adoptame please</h2>
+          <p>Aquí encontrarás a tu nuevo amigo, y ayudar a que otros puedan encontrar un hogar.</p>
+          <a className='whatsapp' href='https://api.whatsapp.com/send?phone=573144183873'> Contáctanos vía WhatsApp
             <img src={whatsappLogo} alt='Logo de WhatsApp' />
           </a>
-          <p>O, ecuéntranos en nuestras redes sociales</p>
-          <div className='social-media'>
-            <a href='https://www.facebook.com/adoptameplease' target='_blank' rel='noopener noreferrer' >
-              <img src={facebook} alt='Logo de Facebook' />
-            </a>
-            <a href='https://www.instagram.com/adoptameplease/' target='_blank' rel='noopener noreferrer' >
-              <img src={instagram} alt='Logo de Instagram' />
-            </a>
-          </div>
         </div>
-        <img src={landing} alt='Imagen de presentación' className='landing-image' />
       </div>
+
+      <div className='company__info' id='company__info'>
+        <h2>Nuestra empresa</h2>
+        <div className='sections'>
+          <CustomSection
+            image={we}
+            title='¿Quiénes somos?'
+            description='Estamos comprometidos con velar por el cuidado de animales que no cuentan con hogar. La intención es lograr que cada mascota pueda encontrar una familia que le brinde el amor que necesita.' />
+
+          <CustomSection
+            image={pets}
+            title='Vision'
+            description='Ser la empresa líder en el cuidado de animales en Colombia, con el fin de que cada mascota pueda encontrar una familia que le brinde el amor que necesita.' />
+
+          <CustomSection
+            image={family}
+            title='Misión'
+            description='Brindar un servicio de calidad, con el fin de que cada mascota pueda encontrar una familia que le brinde el amor que necesita.' />
+        </div>
+      </div>
+
+      <div className='comments'>
+        <h2 className='comments__title'>¿Qué dicen nuestros clientes?</h2>
+        <p className='comments__text'>¡Pronto estaremos publicando los comentarios de nuestros clientes!</p>
+      </div>
+
+      <Contact logo={whatsappLogo} logoFacebook={facebookLogo} logoInstagram={instagramLogo} logoCorreo={correoLogo} />
+
     </>
   )
 }

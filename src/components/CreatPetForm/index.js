@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
-import { apiUrl} from '../../utils/env';
+import { localApiUrl} from '../../utils/env';
 import { Spinner } from '../Spinner/index'
 
 import './styles.css'
@@ -24,14 +24,14 @@ const CreatePetForm = () => {
   }
 
   useEffect(() => {
-    fetch(`${apiUrl}/categorias/`, {
+    fetch(`${localApiUrl}/categorias/`, {
       method: 'GET',
       headers
     })
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch(`${apiUrl}/razas/`,{
+    fetch(`${localApiUrl}/razas/`,{
       method: 'GET',
       headers
     })
@@ -56,7 +56,7 @@ const CreatePetForm = () => {
     data.foto = image
     console.log(data)
     setLoading(true)
-    fetch(`${apiUrl}/mascotas/agregar`, {
+    fetch(`${localApiUrl}/mascotas/agregar`, {
       method: 'POST',
       headers,
       body: JSON.stringify(data)

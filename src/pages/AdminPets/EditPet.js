@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner';
-import { apiUrl} from '../../utils/env';
+import { localApiUrl} from '../../utils/env';
 
 const EditPet = () => {
   const { id } = useParams();
@@ -35,21 +35,21 @@ const EditPet = () => {
   }
 
   useEffect(() => {
-    fetch(`${apiUrl}/categorias/`, {
+    fetch(`${localApiUrl}/categorias/`, {
       method: 'GET',
       headers
     })
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch(`${apiUrl}/razas/`, {
+    fetch(`${localApiUrl}/razas/`, {
       method: 'GET',
       headers
     })
       .then(response => response.json())
       .then(data => setRazas(data))
 
-    fetch(`${apiUrl}/mascotas/${id}`, {
+    fetch(`${localApiUrl}/mascotas/${id}`, {
       method: 'GET',
       headers
     })
@@ -60,7 +60,7 @@ const EditPet = () => {
 
   const onSubmit = async (data) => {
     setLoading(true)
-    fetch(`${apiUrl}/mascotas/actualizar`, {
+    fetch(`${localApiUrl}/mascotas/actualizar`, {
       method: 'PUT',
       headers,
       body: JSON.stringify({ ...data, id, foto: pet.foto })

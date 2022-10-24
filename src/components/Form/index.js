@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
 import { patternEmail } from '../../helpers/Helper'
-import { apiUrl} from '../../utils/env';
+import { localApiUrl} from '../../utils/env';
 
 import './styles.css'
 
@@ -25,7 +25,7 @@ const Form = (pet) => {
       body: JSON.stringify(data)
     };
 
-    fetch(`${apiUrl}/usuarios/solicitud`, requestOptions)
+    fetch(`${localApiUrl}/usuarios/solicitud`, requestOptions)
       .then(response => response.json())
 
     setTimeout(() => {
@@ -35,7 +35,7 @@ const Form = (pet) => {
         body: JSON.stringify(solicitud)
       };
 
-      fetch(`${apiUrl}/solicitudes/${data.telefono}`, requestOptionsS)
+      fetch(`${localApiUrl}/solicitudes/${data.telefono}`, requestOptionsS)
         .then(response => response.json())
     }, 3000);
 
@@ -48,7 +48,7 @@ const Form = (pet) => {
         subject: 'Solicitud de adopción'
       })
     };
-    fetch(`${apiUrl}/correos/`, requestOptionsw)
+    fetch(`${localApiUrl}/correos/`, requestOptionsw)
       .then(response => response.json())
       .then(data => console.log(data))
 

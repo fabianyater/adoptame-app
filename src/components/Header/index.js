@@ -26,14 +26,13 @@ const Header = () => {
         </h1>
       </div>
       <nav className={open ? 'nav-active' : 'right-nav'}>
-        <Link to="/">Inicio</Link>
         {localStorage.getItem('token') ?
           <>
-            <Link to="admin/mascotas/agregar">Agregar Mascota</Link>
             <button type='button' className='button logout' onClick={logout} >Cerrar sesión</button>
           </>
           :
           <>
+            <Link to="/">Inicio</Link>
             <Link to="/login">Inicia sesión</Link>
             <Link to="mascotas">Mascotas</Link>
           </>

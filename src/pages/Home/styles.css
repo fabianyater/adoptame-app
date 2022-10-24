@@ -1,32 +1,41 @@
-.landing {
+.home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70%;
+  margin-bottom: 30px;
 }
 
-.landing-left {
+.home__image{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.home__text {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  gap: 1rem;
+  align-items: center;
+  text-align: center;
 }
 
-.landing-left h2{
+.home__text h2{
   font-size: 2rem;
+  letter-spacing: 2px;
   font-weight: 600;
   color: #000;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-.landing-left p{
-  font-size: 1.2rem;
+.home__text p{
+  font-size: 1rem;
   font-weight: 400;
   color: #000;
-  margin: 1rem 0;
 }
 
 .whatsapp{
@@ -42,55 +51,93 @@
   text-decoration: none;
 }
 
-.landing-image{
-  display: none;
-}
-
-.social-media{
+.company__info{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-direction: column;
+  background-color: #f6f6f6;
 }
 
-.social-media a{
-  text-decoration: none;
+.sections{
+  width: 100%;
+}
+
+.whatsapp:hover{
+  background-color: #19c942;
   color: #fff;
-  padding: 10px 30px;
 }
 
-.social-media a img{
-  width: 50px;
-  height: 50px;
+.comments{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 50%;
+  margin-top: 30px;
+  background-image: url("../../images/comments.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+.comments__title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
 
-@media (min-width: 768px) {
-  .landing{
+.comments__text{
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  width: 60%;
+  background-color: rgba(53, 53, 53, 0.5);
+  padding: 10px 70px;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .home{
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     height: 100%;
+    margin-bottom: 0;
   }
 
-  .landing-left{
+  .home__image{
     width: 50%;
+    height: 100%
   }
 
-  .landing-left h2{
+  .home__text {
+    width: 40%;
+    text-align: right;
+  }
+
+  .home__text h2{
     font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 20px;
+    margin-bottom: 0;
   }
 
-  .landing-left p{
-    font-size: 1.5rem;
+  .home__text p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #000;
   }
-
-  .landing-image{
-    display: block;
-    width: 50%;
+  
+  .company__info{
     height: 100%;
-    object-fit: contain;
   }
 
-  .social-media{
+  .sections{
+    display: flex;
+    flex-direction: row;
   }
+
 }

@@ -6,7 +6,7 @@ import ErrorPage from '../ErrorPage';
 import { Spinner } from '../../components/Spinner';
 
 import './styles.css'
-import { apiUrl} from '../../utils/env';
+import { localApiUrl} from '../../utils/env';
 
 const PetDetails = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const PetDetails = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${apiUrl}/mascotas/${id}`)
+    fetch(`${localApiUrl}/mascotas/${id}`)
       .then(response => response.json())
       .then(data => {
         setPet(data)
