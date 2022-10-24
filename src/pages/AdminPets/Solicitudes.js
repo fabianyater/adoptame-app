@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Spinner } from '../../components/Spinner'
-import { localApiUrl} from '../../utils/env'
+import { apiUrl} from '../../utils/env'
 
 import './requestStyles.css'
 
@@ -10,7 +10,7 @@ const Solicitudes = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${localApiUrl}/solicitudes/`, {
+    fetch(`${apiUrl}/solicitudes/`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

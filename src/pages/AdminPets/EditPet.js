@@ -36,21 +36,21 @@ const EditPet = () => {
   }
 
   useEffect(() => {
-    fetch(`${localApiUrl}/categorias/`, {
+    fetch(`${apiUrl}/categorias/`, {
       method: 'GET',
       headers
     })
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch(`${localApiUrl}/razas/`, {
+    fetch(`${apiUrl}/razas/`, {
       method: 'GET',
       headers
     })
       .then(response => response.json())
       .then(data => setRazas(data))
 
-    fetch(`${localApiUrl}/mascotas/${id}`, {
+    fetch(`${apiUrl}/mascotas/${id}`, {
       method: 'GET',
       headers
     })
@@ -61,7 +61,7 @@ const EditPet = () => {
 
   const onSubmit = async (data) => {
     setLoading(true)
-    fetch(`${localApiUrl}/mascotas/actualizar`, {
+    fetch(`${apiUrl}/mascotas/actualizar`, {
       method: 'PUT',
       headers,
       body: JSON.stringify({ ...data, id, foto: pet.foto })

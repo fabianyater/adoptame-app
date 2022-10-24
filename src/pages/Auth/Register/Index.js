@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { patternEmail } from '../../../helpers/Helper'
-import { localApiUrl} from '../../../utils/env';
+import { apiUrl} from '../../../utils/env';
 
 
 const Register = () => {
@@ -15,7 +15,7 @@ const Register = () => {
       body: JSON.stringify(data)
     };
 
-    fetch(`${localApiUrl}/usuarios/register`, requestOptions)
+    fetch(`${apiUrl}/usuarios/register`, requestOptions)
       .then(response => response.json())
   }
 

@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Spinner } from '../../../components/Spinner';
 import { useUserContext } from '../../../context/userContext';
 import { patternEmail } from '../../../helpers/Helper';
-import { localApiUrl } from '../../../utils/env';
+import { apiUrl} from '../../../utils/env';
 
 import './styles.css'
 
@@ -23,7 +23,7 @@ const Login = () => {
       body: JSON.stringify(data)
     };
 
-    fetch(`${localApiUrl}/usuarios/login`, requestOptions)
+    fetch(`${apiUrl}/usuarios/login`, requestOptions)
       .then(response => response.json())
       .then(data => {
         if (data.data.jwt) {

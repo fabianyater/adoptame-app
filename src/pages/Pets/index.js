@@ -3,7 +3,7 @@ import PetCard from '../../components/PetCard'
 import { Spinner } from '../../components/Spinner'
 
 import whatsappLogo from '../../images/whatsapp-icon.png'
-import { localApiUrl} from '../../utils/env'
+import { apiUrl} from '../../utils/env'
 
 import './styles.css'
 
@@ -13,7 +13,7 @@ const Pets = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${localApiUrl}/mascotas/todas`,
+    fetch(`${apiUrl}/mascotas/todas`,
       {
         method: 'GET',
         headers: {
