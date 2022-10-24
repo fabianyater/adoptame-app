@@ -60,12 +60,12 @@ const Login = () => {
         <p>Al iniciar sesión, podrás administrar las mascotas que se encuentran en adopción.</p>
         <form onSubmit={handleSubmit(onSubmit)} className='form'>
           <div className='groups' >
-            <div className='input-group'>
+            <div className='input-groups'>
               <label htmlFor='correo'>Correo </label>
               <input type='email' id='correo'{...register("correo", { required: true, pattern: { patternEmail, message: 'Correo inválido' } })} />
               {errors.correo && <span className='error' >Este campo es requerido</span>}
             </div>
-            <div className='input-group'>
+            <div className='input-groups'>
               <label htmlFor='contrasenia'>Contraseña </label>
               <input type='password' id='contrasenia'{...register("contrasenia", { required: true })} />
               {errors.contrasenia && <span className='error' >Este campo es requerido</span>}

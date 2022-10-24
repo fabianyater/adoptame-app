@@ -25,32 +25,35 @@ const AdminPets = () => {
 
   return (
     <>
-      <h2>Administrar Mascotas</h2>
-      <p className='text'>Hola, {userName}. Aquí podrás administrar todas las mascotas. Podrás agregar una nueva mascota,
-        actualizar sus datos, consultar qué mascotas han sido adoptadas y cuáles no.
-        <strong> Vamos y agreguemos una nueva mascota para darle mucha felicidad a ella y a su nuevo dueño, 🥰</strong>
-      </p>
+      <div className='admin-container'>
 
-      <nav className='subnav'>
-        <ul>
-          {
-            routes.map(({ name, path }) => (
-              <li key={path}>
-                <Link
-                  to={path}
-                  className={active === path ? 'active' : ''}
-                  onClick={() => setActive(path)}
-                >
-                  {name}
-                </Link>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
+        <h2>Administrar Mascotas</h2>
+        <p className='text'>Hola, {userName}. Aquí podrás administrar todas las mascotas. Podrás agregar una nueva mascota,
+          actualizar sus datos, consultar qué mascotas han sido adoptadas y cuáles no.
+          <strong> Vamos y agreguemos una nueva mascota para darle mucha felicidad a ella y a su nuevo dueño, 🥰</strong>
+        </p>
 
-      <div>
-        <Outlet />
+        <nav className='subnav'>
+          <ul>
+            {
+              routes.map(({ name, path }) => (
+                <li key={path}>
+                  <Link
+                    to={path}
+                    className={active === path ? 'active' : ''}
+                    onClick={() => setActive(path)}
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+
+        <div>
+          <Outlet />
+        </div>
       </div>
     </>
   )
