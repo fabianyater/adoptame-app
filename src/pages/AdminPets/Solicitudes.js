@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Contact from '../../components/Contact'
 import { Spinner } from '../../components/Spinner'
 import { apiUrl } from '../../utils/env'
 
-import facebookLogo from '../../images/facebook.png'
-import instagramLogo from '../../images/instagram.png'
 import correoLogo from '../../images/correo.png'
-import whatsappLogo from '../../images/whatsapp-icon.png'
 
 import './requestStyles.css'
 
