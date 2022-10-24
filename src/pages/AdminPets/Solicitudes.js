@@ -43,7 +43,7 @@ const Solicitudes = () => {
               <div className='solicitud' key={solicitud.id}>
                 <div className='solicitud__info'>
                   <h2>{solicitud.usuario?.nombre} {solicitud.usuario?.apellido}</h2>
-                  <p>{solicitud.usuario?.correo} <a href='mailto:adoptameplease1@gmail.com'>
+                  <p>{solicitud.usuario?.correo} <a href={`mailto:${solicitud.usuario?.correo}`}>
                     <img src={correoLogo} alt='Logo de Gmail' />
                   </a> </p>
                 </div>
