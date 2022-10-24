@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useParams } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner';
-import { localApiUrl } from '../../utils/env';
+import { apiUrl} from '../../utils/env';
 
 const EditPet = () => {
   const { id } = useParams();
