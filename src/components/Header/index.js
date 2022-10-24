@@ -13,6 +13,10 @@ const Header = () => {
     window.location.href = '/';
   }
 
+  const hideNav = () => {
+    setOpen(false);
+  }
+
 
   return (
     <header className="header">
@@ -26,15 +30,21 @@ const Header = () => {
         </h1>
       </div>
       <nav className={open ? 'nav-active' : 'right-nav'}>
+        <button className='hamburger hamburger--squeeze is-active custom' type="button" onClick={() => setOpen(!open)}>
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>
         {localStorage.getItem('token') ?
           <>
-            <button type='button' className='button logout' onClick={logout} >Cerrar sesión</button>
+            <Link to="/#" onClick={hideNav}>Empresa</Link>
+            <button type='button' className='button-logout' onClick={logout} >Cerrar sesión</button>
           </>
           :
           <>
-            <Link to="/">Inicio</Link>
-            <Link to="/login">Inicia sesión</Link>
-            <Link to="mascotas">Mascotas</Link>
+            <Link to="/" onClick={hideNav} >Inicio</Link>
+            <Link to="/login" onClick={hideNav}>Inicia sesión</Link>
+            <Link to="mascotas" onClick={hideNav}>Mascotas</Link>
           </>
         }
       </nav>

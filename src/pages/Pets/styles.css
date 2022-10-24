@@ -117,9 +117,8 @@
 
 @media screen and (min-width: 1000px){
   .pet-cards{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    width: 80%;
+    margin: 0 auto;
   }
 
   .card{

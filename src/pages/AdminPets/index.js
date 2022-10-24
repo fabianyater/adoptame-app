@@ -9,10 +9,9 @@ const AdminPets = () => {
   const [active, setActive] = useState('agregar')
 
   const routes = [
-    { name: 'Agregar mascota', path: 'agregar' },
-    { name: 'Actualizar mascota', path: 'actualizar' },
-    { name: 'Ver solicitudes', path: 'solicitudes' },
-    { name: 'Agregar usuario', path: 'agregar-usuario' },
+    { name: 'Mascotas', path: 'todas' },
+    { name: 'Solicitudes', path: 'solicitudes' },
+    { name: 'Usuarios', path: 'agregar-usuario' },
   ]
 
   useEffect(() => {

@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import { Link, useParams } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner';
-import { localApiUrl} from '../../utils/env';
+import { localApiUrl } from '../../utils/env';
 
 const EditPet = () => {
   const { id } = useParams();
@@ -65,7 +66,10 @@ const EditPet = () => {
       headers,
       body: JSON.stringify({ ...data, id, foto: pet.foto })
     })
-      .then(response => response.json())
+      .then(response => {
+        response.json()
+        toast.success('Mascota actualizada')
+      })
       .finally(() => setLoading(false))
   }
 
@@ -84,6 +88,8 @@ const EditPet = () => {
 
   return (
     <>
+      <Toaster position='top-center' />
+      <Link to='/admin/mascotas/todas' className='back'>Volver</Link>
       <form onSubmit={handleSubmit(onSubmit)} className='formCreatePet'>
         <div className='file-group'>
           {pet.foto && <img src={`data:image/jpeg;base64,${pet.foto}`} width={100} alt={pet.nombre} />}

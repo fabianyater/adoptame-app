@@ -34,7 +34,6 @@ const Login = () => {
 
           localStorage.setItem('token', data.data.jwt);
           localStorage.setItem('correo', data.data.correo);
-          window.location.href = '/admin/mascotas/agregar';
           toast.success('Bienvenido');
           setLoading(false);
         }
@@ -48,14 +47,14 @@ const Login = () => {
   }
 
   if (localStorage.getItem('token')) {
-    window.location.href = '/admin/mascotas/agregar';
+    window.location.href = '/admin/mascotas/todas';
   }
 
   return (
     <>
-    <div>
-      <Toaster position='top-center' />
-    </div>
+      <div>
+        <Toaster position='top-center' />
+      </div>
       <div className='login'>
         <h1>Si eres un administrador, por favor ingresa tus credeciales e inicia sesión</h1>
         <p>Al iniciar sesión, podrás administrar las mascotas que se encuentran en adopción.</p>

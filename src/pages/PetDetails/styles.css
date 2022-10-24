@@ -4,6 +4,7 @@
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 30px;
     padding: 10px;
     width: 50px;
     border: 1px solid #F55C0D;
@@ -22,7 +23,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .pet-details img{
@@ -75,6 +77,11 @@
     padding: 5px 10px;
     border-radius: 20px;
     color: #F55C0D;
+}
+
+.form-info{
+   width: 90%;
+   margin: 0 auto;
 }
 
 /* Create media query */

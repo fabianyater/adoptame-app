@@ -6,7 +6,7 @@ import ErrorPage from '../ErrorPage';
 import { Spinner } from '../../components/Spinner';
 
 import './styles.css'
-import { localApiUrl} from '../../utils/env';
+import { localApiUrl } from '../../utils/env';
 
 const PetDetails = () => {
   const { id } = useParams();
@@ -53,7 +53,8 @@ const PetDetails = () => {
                 <span>{pet.estado === 'DISPONIBLE' ? 'Disponible' : 'Adoptado'}</span>
               </div>
             </div>
-          </div><div className='form-info'>
+          </div>
+          <div className='form-info'>
             <h2>Haz feliz y sé feliz</h2>
             <p>Llena el formulario para realizar una solicitud y
               poder llevar este nuevo miembto a tu familia, 🤩</p>
