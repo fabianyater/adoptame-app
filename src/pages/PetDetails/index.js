@@ -6,7 +6,7 @@ import ErrorPage from '../ErrorPage';
 import { Spinner } from '../../components/Spinner';
 
 import './styles.css'
-import { apiUrl} from '../../utils/env';
+import { localApiUrl } from '../../utils/env';
 
 const PetDetails = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const PetDetails = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${apiUrl}/mascotas/${id}`)
+    fetch(`${localApiUrl}/mascotas/${id}`)
       .then(response => response.json())
       .then(data => {
         setPet(data)
@@ -46,6 +46,11 @@ const PetDetails = () => {
               <h2>{pet.nombre}, {pet.edad > 1 ? pet.edad + ' añitos' : pet.edad + ' añito'}</h2>
               <label>Desripción
                 <p>{pet.descripcion}</p>
+              </label>
+              <label>N° solicitudes
+                <p>
+                  {pet.solicitudes}
+                </p>
               </label>
               <div className='pet-details__tag'>
                 <span>{pet.categoria?.nombre}</span>

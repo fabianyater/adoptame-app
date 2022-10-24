@@ -1,35 +1,125 @@
+/* .solicitudes{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem 0;
+}
+ */
 
-.solicitudes {
+.solicitudes{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.solicitud{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.solicitud__info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: column;
+}
+
+.solicitud__info > *{
+  margin: 0.3rem 0;
+}
+
+.solicitud__info > p{
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
 }
 
-.solicitudes .solicitud {
+.solicitud__info > p > a > img{
+  width: 30px;
+  height: 30px;
+  margin-left: 0.5rem;
+}
+
+.solicitud span{
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.solicitud__mascota{
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.solicitud__mascota img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  min-width: 0;
+}
+
+.solicitud__mascota__info{
+  display: flex;
+  align-items: center;
   flex-direction: column;
+  justify-content: space-around;
+}
+
+.solicitud__mascota__info > *{
+ margin: 0;
+}
+
+.solicitud__mascota__info > *:last-child{
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgb(221, 80, 24);
+  padding: 0.2rem 0.5rem;
+  border-radius: 15px;
+  color: rgb(221, 80, 24);
+}
+
+.solicitud__buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
+  margin-top: 10px;
 }
 
-@media (min-width: 768px) {
-
-  .solicitudes{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    margin: 1rem 0;
+.solicitud__buttons button{
+  background-color: #fff;
+  border: 1px solid rgb(221, 80, 24);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  color: rgb(221, 80, 24);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.solicitudes .solicitud{
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.solicitud__buttons > *:first-child{
+  color: rgb(17, 153, 47);
+  border: 1px solid rgb(17, 153, 47);
+
 }
+
+.solicitud__buttons > *:first-child:hover{
+  color: rgb(26, 107, 44);
+  background-color: rgb(17, 153, 47, 0.1);
+}
+
+.solicitud__buttons > *:last-child:hover{
+  color: rgb(221, 80, 24);
+  background-color: rgb(221, 80, 24, 0.1);
 }

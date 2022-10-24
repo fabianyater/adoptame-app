@@ -6,7 +6,7 @@ import './styles.css'
 
 const AdminPets = () => {
   const userName = localStorage.getItem('correo');
-  const [active, setActive] = useState('agregar')
+  const [active, setActive] = useState('todas')
 
   const routes = [
     { name: 'Mascotas', path: 'todas' },
