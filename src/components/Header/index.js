@@ -17,6 +17,13 @@ const Header = () => {
     setOpen(false);
   }
 
+  
+  var retrievedObject = localStorage.getItem('empresa');
+  
+  const nombre = JSON.parse(retrievedObject).nombre.split(' ')[0];
+  const nombre2 = JSON.parse(retrievedObject).nombre.split(' ')[1];
+  const nombre3 = JSON.parse(retrievedObject).nombre.split(' ')[2];
+
 
   return (
     <header className="header">
@@ -25,7 +32,7 @@ const Header = () => {
           <img src={logo} alt="Pet logo" />
         </Link>
         <h1> <Link to="/">
-          Adoptame <span> please </span> 🐶
+          {nombre} <span> {nombre2} </span> {nombre3}
         </Link>
         </h1>
       </div>

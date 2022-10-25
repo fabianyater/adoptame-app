@@ -1,0 +1,44 @@
+.config__container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "config__container--left config__container--left config__container--right"
+    "config__container--left config__container--left races";
+  width: 80%;
+  margin: 0 auto;
+}
+.config__container--left { 
+  grid-area: config__container--left; 
+  margin: 0 auto;
+  width: 80%;
+}
+
+.config__container--right { 
+  grid-area: config__container--right; 
+  margin: 0 auto;
+  width: 80%;
+}
+
+.races {
+   grid-area: races; 
+   margin: 0 auto;
+   width: 80%;
+}
+
+/* media query */
+
+@media (max-width: 768px) {
+  .config__container {
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-areas: 
+      "config__container--left"
+      "config__container--right"
+      "races";
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
