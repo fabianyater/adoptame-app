@@ -39,12 +39,22 @@ const Form = (pet) => {
         .then(response => response.json())
     }, 3000);
 
+    const htmlModel = `
+    <div style="background-color: #f5f5f5; padding: 20px; border-radius: 10px; width: 100%; max-width: 500px; margin: 0 auto;">
+      <h1 style="text-align: center; color: #f5f5f5; background-color: #3f51b5; padding: 10px; border-radius: 10px;">Adoptame please</h1>
+      <h2 style="text-align: center;">Hola ${data.nombre} ${data.apellido}</h2>
+      <p style="text-align: center;">Tu solicitud ha sido enviada con éxito</p>
+      <p style="text-align: center;">En breve nos pondremos en contacto contigo</p>
+      <p style="text-align: center;">Gracias por confiar en Adoptame please</p>
+    </div>
+    `
+
     const requestOptionsw = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         sender: data.correo,
-        msgBody: `Hola  <h1> ${data.nombre} ${data.apellido} </h1>, gracias por tu solicitud de adopción, en breve nos pondremos en contacto contigo al número ${data.telefono}.`,
+        msgBody: htmlModel,
         subject: 'Solicitud de adopción'
       })
     };
