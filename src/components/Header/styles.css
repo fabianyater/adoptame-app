@@ -33,7 +33,7 @@
   height: 40px;
 }
 
-.left-nav h1{
+.left-nav h2{
   font-size: 1.2rem;
   margin: 0;
   line-height: 1.15;
@@ -98,7 +98,7 @@
     padding: 10px 70px;
   }
 
-  .left-nav h1{
+  .left-nav h2{
     font-size: 1.5rem;
   }
 

@@ -40,10 +40,10 @@ const Header = () => {
         <Link to="/" className='logo'>
           <img src={empresa.logo ? `data:image/jpeg;base64,${empresa?.logo}`: logo} alt='Logo de la empresa' />
         </Link>
-        <h1> <Link to="/">
+        <h2> <Link to="/">
           {empresa?.nombre || 'Adoptame please 🐶'}
         </Link>
-        </h1>
+        </h2>
       </div>
       <nav className={open ? 'nav-active' : 'right-nav'}>
         <button className='hamburger hamburger--squeeze is-active custom' type="button" onClick={() => setOpen(!open)}>
