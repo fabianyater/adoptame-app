@@ -16,6 +16,7 @@ import EditPet from './pages/AdminPets/EditPet';
 import Register from './pages/Auth/Register/Index';
 import Login from './pages/Auth/Login/Index';
 import { UserContextProvider } from './context/userContext';
+import Configuracion from './pages/AdminPets/Configuracion';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,6 +33,7 @@ root.render(
             element={<PetDetails />}
           />
           <Route path="/login" element={<Login />} />
+          <Route path='/admin/configuracion' element={<Configuracion />} />
           <Route path='/admin/mascotas' element={<AdminPets />} >
             <Route path='todas' element={<AllPets />} />
             <Route path='agregar' element={<NewPet />} />
