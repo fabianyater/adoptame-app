@@ -37,8 +37,7 @@
       "config__container--left"
       "config__container--right"
       "races";
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
     height: 100%;
   }
 }

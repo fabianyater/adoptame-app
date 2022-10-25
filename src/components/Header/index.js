@@ -41,7 +41,7 @@ const Header = () => {
           <img src={empresa.logo ? `data:image/jpeg;base64,${empresa?.logo}`: logo} alt='Logo de la empresa' />
         </Link>
         <h1> <Link to="/">
-          {empresa?.nombre}
+          {empresa?.nombre || 'Adoptame please 🐶'}
         </Link>
         </h1>
       </div>

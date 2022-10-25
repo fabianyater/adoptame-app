@@ -44,7 +44,7 @@ const Register = () => {
         </div>
       </div>
 
-      <input type='submit' value='Rgistrar administrador' className='button' />
+      <input type='submit' value='Registrar administrador' className='button' />
     </form>
   )
 }

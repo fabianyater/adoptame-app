@@ -51,9 +51,7 @@ const AdminPets = () => {
           </ul>
         </nav>
 
-        <div>
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </>
   )
