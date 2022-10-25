@@ -7,7 +7,7 @@ import { apiUrl } from '../../utils/env';
 const NuevaRaza = () => {
   const [loading, setLoading] = useState(false)
 
-  const { handleSubmit, register, formState: { errors } } = useForm();
+  const { handleSubmit, register, reset, formState: { errors } } = useForm();
 
   const headers = {
     'Content-Type': 'application/json',
@@ -24,6 +24,7 @@ const NuevaRaza = () => {
       .then(response => {
         response.json()
         toast.success('Raza creada')
+        reset()
       })
       .finally(() => setLoading(false))
   }

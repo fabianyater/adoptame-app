@@ -7,7 +7,7 @@ import { apiUrl } from '../../utils/env'
 const NuevaCategoria = () => {
   const [loading, setLoading] = useState(false)
 
-  const { handleSubmit, register, formState: { errors } } = useForm();
+  const { handleSubmit, register, reset, formState: { errors } } = useForm();
 
   const headers = {
     'Content-Type': 'application/json',
@@ -24,6 +24,7 @@ const NuevaCategoria = () => {
       .then(response => {
         response.json()
         toast.success('Categoria creada')
+        reset()
       })
       .finally(() => setLoading(false))
   }
