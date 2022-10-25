@@ -45,7 +45,7 @@ const Home = () => {
       <div className='home' id='home'>
         <img src={landing} alt='Imagen de presentación' className='home__image' />
         <div className='home__text'>
-          <h2>Bienvenido a {empresa?.nombre}</h2>
+          <h1>Bienvenido a {empresa?.nombre}</h1>
           <p>Un proyecto de <strong>FUNDACIÓN RENACER SOCIAL</strong></p>
           <p>Aquí encontrarás a tu nuevo amigo, y ayudar a que otros puedan encontrar un hogar.</p>
           <a className='whatsapp' href='https://api.whatsapp.com/send?phone=3227003105'> Contáctanos vía WhatsApp
