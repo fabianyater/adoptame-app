@@ -60,7 +60,6 @@ const Form = (pet) => {
     };
     fetch(`${apiUrl}/correos/`, requestOptionsw)
       .then(response => response.json())
-      .then(data => console.log(data))
 
     setIsSubmitted(!isSubmitted)
     reset()

@@ -11,7 +11,7 @@ const Contact = ({ logo, logoFacebook, logoInstagram, logoCorreo }) => {
       <a className='whatsapp' href='https://api.whatsapp.com/send?phone=573144183873'> Contáctanos vía WhatsApp
         <img src={logo} alt='Logo de WhatsApp' />
       </a>
-      <span>Encuentranos también en nuestras redes sociales</span>
+      <span>Encuéntranos también en nuestras redes sociales</span>
       <div className='contact__social'>
         <a href='https://www.facebook.com/adoptameplease' target='_blank' rel='noreferrer'>
           <img src={logoFacebook} alt='Logo de Facebook' />

@@ -126,7 +126,7 @@ const Configuracion = () => {
               <button type='submit' className='button edit' disabled={loading}>{loading ?
                 <Spinner color="white" size={25} speed={1} lineWeight={5} />
                 :
-                'Actulizar'}
+                'Actualizar'}
               </button>
             </div>
           </form>

@@ -39,7 +39,6 @@ const Login = () => {
         }
       })
       .catch(error => {
-        console.log(error);
         setLoading(false);
         toast.error('Error al iniciar sesión');
       });

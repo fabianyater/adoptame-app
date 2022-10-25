@@ -54,7 +54,6 @@ const CreatePetForm = () => {
 
   const onSubmit = async (data) => {
     data.foto = image
-    console.log(data)
     setLoading(true)
     fetch(`${apiUrl}/mascotas/agregar`, {
       method: 'POST',

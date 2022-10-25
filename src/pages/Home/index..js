@@ -36,8 +36,6 @@ const Home = () => {
       })
   }, [])
 
-  console.log(empresa?.telefono)
-
   // eslint-disable-next-line no-unused-vars
   const url = `https://api.whatsapp.com/send?phone=${empresa?.telefono}`;
 
@@ -66,7 +64,7 @@ const Home = () => {
 
           <CustomSection
             image={pets}
-            title='Vision'
+            title='Visión'
             description='Ser la empresa líder en el cuidado de animales en Colombia, con el fin de que cada mascota pueda encontrar una familia que le brinde el amor que necesita.' />
 
           <CustomSection
@@ -83,7 +81,7 @@ const Home = () => {
 
       <Contact logo={whatsappLogo} logoFacebook={facebookLogo} logoInstagram={instagramLogo} logoCorreo={correoLogo} />
 
-      <address className='address' >{empresa.direccion}</address>
+      <address className='address' >{empresa?.direccion}</address>
 
       <iframe id='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.246284285669!2d-75.60168228466961!3d1.6084463611366684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e244e15c86ead5d%3A0x2accc1a74d25835c!2sCra.%207%20%232a-2%2C%20Florencia%2C%20Caquet%C3%A1!5e0!3m2!1ses-419!2sco!4v1666676699157!5m2!1ses-419!2sco" width="600" height="450" style={{ border: '0' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title='address'></iframe>
 

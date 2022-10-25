@@ -20,7 +20,6 @@ export function UserContextProvider({ children }) {
 export function useUserContext() {
   const context = useContext(UserContext)
   if (!context) {
-    console.log(context);
     throw new Error('Bueno, ok')
   }
   return context

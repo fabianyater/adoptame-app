@@ -8,7 +8,6 @@ const Register = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
