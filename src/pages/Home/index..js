@@ -32,10 +32,15 @@ const Home = () => {
       })
       .then(response => response.json())
       .then(data => {
-        localStorage.setItem('empresa', JSON.stringify(data))
         setEmpresa(data)
       })
   }, [])
+
+  console.log(empresa?.telefono)
+
+  // eslint-disable-next-line no-unused-vars
+  const url = `https://api.whatsapp.com/send?phone=${empresa?.telefono}`;
+
 
   return (
     <>
@@ -45,7 +50,7 @@ const Home = () => {
           <h2>Bienvenido a {empresa?.nombre}</h2>
           <p>Un proyecto de <strong>FUNDACIÓN RENACER SOCIAL</strong></p>
           <p>Aquí encontrarás a tu nuevo amigo, y ayudar a que otros puedan encontrar un hogar.</p>
-          <a className='whatsapp' href={`https://api.whatsapp.com/send?phone=${empresa.telefono}`}> Contáctanos vía WhatsApp
+          <a className='whatsapp' href='https://api.whatsapp.com/send?phone=3227003105'> Contáctanos vía WhatsApp
             <img src={whatsappLogo} alt='Logo de WhatsApp' />
           </a>
         </div>

@@ -24,14 +24,14 @@ const CreatePetForm = () => {
   }
 
   useEffect(() => {
-    fetch(`${apiUrl}/categorias/`, {
+    fetch(`${apiUrl}/categorias/todas`, {
       method: 'GET',
       headers
     })
       .then(response => response.json())
       .then(data => setCategorias(data))
 
-    fetch(`${apiUrl}/razas/`,{
+    fetch(`${apiUrl}/razas/todas`,{
       method: 'GET',
       headers
     })

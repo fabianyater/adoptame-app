@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { apiUrl } from '../../utils/env';
 
 import logo from '../../images/pet-logo.png'
 import './styles.css'
@@ -7,6 +8,7 @@ import '../../hamburger.css'
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [empresa, setEmpresa] = useState({})
 
   const logout = () => {
     localStorage.removeItem('token');
@@ -17,13 +19,20 @@ const Header = () => {
     setOpen(false);
   }
 
-  
-  var retrievedObject = localStorage.getItem('empresa');
-  
-  const nombre = JSON.parse(retrievedObject).nombre.split(' ')[0];
-  const nombre2 = JSON.parse(retrievedObject).nombre.split(' ')[1];
-  const nombre3 = JSON.parse(retrievedObject).nombre.split(' ')[2];
-
+  useEffect(() => {
+    fetch(`${apiUrl}/empresa/obtener`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Allow-Control-Allow-Origin': '*',
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        setEmpresa(data)
+      })
+  }, [])
 
   return (
     <header className="header">
@@ -32,7 +41,7 @@ const Header = () => {
           <img src={logo} alt="Pet logo" />
         </Link>
         <h1> <Link to="/">
-          {nombre} <span> {nombre2} </span> {nombre3}
+          {empresa?.nombre}
         </Link>
         </h1>
       </div>
