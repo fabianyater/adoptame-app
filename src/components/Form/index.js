@@ -43,9 +43,8 @@ const Form = (pet) => {
     <div style="background-color: #f5f5f5; padding: 20px; border-radius: 10px; width: 100%; max-width: 500px; margin: 0 auto;">
       <h1 style="text-align: center; color: #f5f5f5; background-color: #3f51b5; padding: 10px; border-radius: 10px;">Adoptame please</h1>
       <h2 style="text-align: center;">Hola ${data.nombre} ${data.apellido}</h2>
-      <p style="text-align: center;">Tu solicitud ha sido enviada con éxito</p>
-      <p style="text-align: center;">En breve nos pondremos en contacto contigo</p>
-      <p style="text-align: center;">Gracias por confiar en Adoptame please</p>
+      <p style="text-align: center;">Ha relaziado solicitud con éxito</p>
+      <p style="text-align: center;">Número de contacto: ${data.telefono}</p>
     </div>
     `
 
