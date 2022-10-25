@@ -38,7 +38,7 @@ const Header = () => {
     <header className="header">
       <div className='left-nav'>
         <Link to="/" className='logo'>
-          <img src={logo} alt="Pet logo" />
+          <img src={empresa.logo ? `data:image/jpeg;base64,${empresa?.logo}`: logo} alt='Logo de la empresa' />
         </Link>
         <h1> <Link to="/">
           {empresa?.nombre}
