@@ -135,7 +135,7 @@
     color: #F55C0D;
   }
 
-  .button-logout{
+  /* .button-logout{
     background-color: #F55C0D;
     color: #fff;
     padding: 10px 20px;
@@ -148,7 +148,7 @@
     background-color: #f56f2d;
     color: #fff;
   }
-
+ */
   .header > button{
     display: none;
   }
@@ -157,8 +157,10 @@
     display: none;
   }
 
-  .button-logout{
+  .logout{
     display: block !important;
+    margin: 0 !important;
+    margin-left: 10px !important;
   }
 
 

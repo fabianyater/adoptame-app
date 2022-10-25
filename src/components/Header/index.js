@@ -46,7 +46,7 @@ const Header = () => {
           <>
             <Link to="/admin/mascotas/todas" onClick={hideNav}>Mascotas</Link>
             <Link to="/admin/configuracion" onClick={hideNav}>Configuración</Link>
-            <button type='button' className='button-logout' onClick={logout} >Cerrar sesión</button>
+            <button type='button' className='button logout' onClick={logout} >Cerrar sesión</button>
           </>
           :
           <>
