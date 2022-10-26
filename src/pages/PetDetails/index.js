@@ -54,7 +54,7 @@ const PetDetails = () => {
               <div className='pet-details__tag'>
                 <span>{pet.categoria?.nombre}</span>
                 <span>{pet.raza?.nombre}</span>
-                <span>{pet.estado === 'DISPONIBLE' ? 'Disponible' : 'Adoptado'}</span>
+                <span>{pet.estado === 'Disponible' ? 'Disponible' : 'Adoptado'}</span>
               </div>
             </div>
           </div>

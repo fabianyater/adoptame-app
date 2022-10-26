@@ -5,14 +5,17 @@ import { apiUrl } from '../../utils/env'
 import correoLogo from '../../images/correo.png'
 
 import './requestStyles.css'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Solicitudes = () => {
   const [solicitudes, setSolicitudes] = useState([])
   const [loading, setLoading] = useState(false)
+  const [loading2, setLoading2] = useState(false)
+
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${apiUrl}/solicitudes/`, {
+    fetch(`${apiUrl}/solicitudes/estado/Pendiente`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -26,12 +29,36 @@ const Solicitudes = () => {
       })
   }, [])
 
+
+  const handleAccept = (id) => {
+    setLoading2(true)
+    fetch(`${apiUrl}/solicitudes/actualizar/${id}/Aceptada`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${localStorage.getItem('token')}`
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        /* setSolicitudes(data) */
+        console.log(data)
+        toast.success('Solicitud aceptada')
+      })
+      .finally(() => {
+        setLoading2(false)
+      })
+  }
+
+
+
   useEffect(() => {
     document.title = "Solicitudes 🐶🐱🐔"
   }, [])
 
   return !loading ? (
     <div className='pet-container'>
+      <div> <Toaster position='top-center' /> </div>
       {solicitudes.length === 0 ?
         <div className='empty'>
           <h2>Aún no hay solicitudes</h2>
@@ -52,11 +79,16 @@ const Solicitudes = () => {
                   <div className='solicitud__mascota__info'>
                     <p>{solicitud.mascota?.nombre}</p>
                     <p>{solicitud.mascota?.edad}</p>
-                    <p>{solicitud.estado}</p>
+                    <p>{solicitud.mascota?.estado}</p>
                   </div>
                 </div>
                 <div className='solicitud__buttons'>
-                  <button>Aceptar</button>
+                  <button onClick={() => handleAccept(solicitud.id)} >
+                    {loading2 ?
+                      <Spinner color="white" size={25} speed={1} lineWeight={5} />
+                      :
+                      'Aceptar'}
+                  </button>
                   <button>Rechazar</button>
                 </div>
               </div>
