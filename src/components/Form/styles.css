@@ -19,6 +19,10 @@
   color: white;
 }
 
+.check-disabled{
+  cursor: not-allowed;
+}
+
 .card-solicitud{
   background-color: #F55C0D;
   border-radius: 10px;
@@ -34,6 +38,7 @@
   background: #fff;
   box-shadow: 0 5px 5px rgb(222, 222, 222);
   border-radius: 15px;
+  margin: 20px 0;
   
 }
 

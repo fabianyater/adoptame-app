@@ -62,7 +62,8 @@ const PetDetails = () => {
             <h2>Haz feliz y sé feliz</h2>
             <p>Llena el formulario para realizar una solicitud y
               poder llevar este nuevo miembto a tu familia, 🤩</p>
-          </div><Form pet={pet} />
+          </div>
+          <Form pet={pet} />
         </>
       ) : (
         <div className='error-container'>

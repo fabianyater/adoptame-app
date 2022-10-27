@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
 import { patternEmail } from '../../helpers/Helper'
-import { apiUrl} from '../../utils/env';
+import { apiUrl } from '../../utils/env';
 
 import './styles.css'
 
@@ -10,6 +10,7 @@ const Form = (pet) => {
   const { handleSubmit, register, reset, formState: { errors } } = useForm();
 
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isChecked, setIsChecked] = useState(false)
 
   const solicitud = {
     estado: 'Pendiente',
@@ -100,7 +101,12 @@ const Form = (pet) => {
           </div>
         </div>
 
-        <input type='submit' value='Enviar solicitud' className='button' />
+        <div style={{ margin: '15px 0' }}>
+          <input name='mensaje' type='checkbox' onChange={() => setIsChecked(!isChecked)} />
+          <label htmlFor='mensaje'>  Acepto el tratamiento de datos </label>
+        </div>
+
+        <input type='submit' value='Enviar solicitud' className={ isChecked ? 'button' : 'button check-disabled' } disabled={!isChecked} />
       </form>
     </>
     /* ) :
