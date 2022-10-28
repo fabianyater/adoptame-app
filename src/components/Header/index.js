@@ -60,6 +60,7 @@ const Header = () => {
           :
           <>
             <Link to="/" onClick={hideNav} >Inicio</Link>
+            <Link to="/contacto" onClick={hideNav} >Contacto</Link>
             <Link to="/login" onClick={hideNav}>Inicia sesión</Link>
             <Link to="mascotas" onClick={hideNav}>Mascotas</Link>
           </>

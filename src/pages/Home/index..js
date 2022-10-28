@@ -13,7 +13,6 @@ import we from '../../images/we.webp'
 import './styles.css'
 import Contact from '../../components/Contact'
 import { apiUrl } from '../../utils/env'
-import FormContact from '../../components/FormContact'
 
 const Home = () => {
   const [empresa, setEmpresa] = useState({})
@@ -82,7 +81,6 @@ const Home = () => {
 
       <div className='contact-section' >
         <Contact logo={whatsappLogo} logoFacebook={facebookLogo} logoInstagram={instagramLogo} logoCorreo={correoLogo} />
-        <FormContact />
       </div>
 
       <address className='address' >{empresa?.direccion}</address>

@@ -17,6 +17,7 @@ import Register from './pages/Auth/Register/Index';
 import Login from './pages/Auth/Login/Index';
 import { UserContextProvider } from './context/userContext';
 import Configuracion from './pages/AdminPets/Configuracion';
+import FormContact from './components/FormContact';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,11 +28,8 @@ root.render(
         <Route path="/" element={<App />} >
           <Route path='/' element={<Home />} />
           <Route path="mascotas" element={<Pets />} />
-          <Route
-            exact
-            path="/mascotas/:id"
-            element={<PetDetails />}
-          />
+          <Route path="/contacto" element={<FormContact />} />
+          <Route exact path="/mascotas/:id" element={<PetDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path='/admin/configuracion' element={<Configuracion />} />
           <Route path='/admin/mascotas' element={<AdminPets />} >
