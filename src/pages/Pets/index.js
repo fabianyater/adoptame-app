@@ -3,7 +3,7 @@ import PetCard from '../../components/PetCard'
 import { Spinner } from '../../components/Spinner'
 
 import whatsappLogo from '../../images/whatsapp-icon.png'
-import { apiUrl} from '../../utils/env'
+import { apiUrl } from '../../utils/env'
 
 import './styles.css'
 
@@ -12,6 +12,10 @@ const Pets = () => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    getTodos()
+  }, [])
+
+  const getTodos = () => {
     setLoading(true)
     fetch(`${apiUrl}/mascotas/todas`,
       {
@@ -26,7 +30,27 @@ const Pets = () => {
         setPets(data)
         setLoading(false)
       })
-  }, [])
+  }
+
+  const getDogs = (data) => {
+    setLoading(true)
+    let category = data === 'Perro' ? 'Perro' : 'Gato'
+    fetch(`${apiUrl}/mascotas/categoria/${category}`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Allow-Control-Allow-Origin': '*',
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        setPets(null)
+        setPets(data)
+        setLoading(false)
+      })
+  }
+
 
 
   useEffect(() => {
@@ -47,7 +71,17 @@ const Pets = () => {
           </a>
         </div>
         : (
-          <PetCard pets={pets} route='mascotas' link={true} />
+          <>
+            <div>
+              <h2 style={{ marginLeft: '30px' }}>Categorías</h2>
+              <div className='categories'>
+                <button className='category' onClick={() => getTodos()} >Todos</button>
+                <button className='category' onClick={() => getDogs('Perro')} >Perros</button>
+                <button className='category' onClick={() => getDogs('Gato')} >Gatos</button>
+              </div>
+            </div>
+            <PetCard pets={pets} route='mascotas' link={true} />
+          </>
         )}
 
     </div>

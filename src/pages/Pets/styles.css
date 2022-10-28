@@ -113,6 +113,30 @@
   margin-left: 10px;
 }
 
+.categories{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.categories button{
+  text-decoration: none;
+  color: #F55C0D;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #F55C0D;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.categories button:hover{
+  background-color: #F55C0D;
+  color: #fff;
+}
+
 /* media query */
 
 @media screen and (min-width: 1000px){
@@ -124,5 +148,11 @@
   .card{
     width: 100%;
     max-width: 300px;
+  }
+
+  .categories{
+    justify-content: flex-start;
+    margin: 0 auto;
+    margin-left: 30px;
   }
 }
