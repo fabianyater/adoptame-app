@@ -66,7 +66,7 @@ const Pets = () => {
           <h2>Lo sentimos, no hay mascotas disponibles en este momento</h2>
           <p>Por favor, intenta más tarde</p>
 
-          <a href='https://api.whatsapp.com/send?phone=573224680795'> Escríbenos a nuestro WhatsApp
+          <a href='https://api.whatsapp.com/send?phone=573227003105'> Escríbenos a nuestro WhatsApp
             <img src={whatsappLogo} alt='Logo de WhatsApp' />
           </a>
         </div>
